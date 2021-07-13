@@ -29,13 +29,13 @@ public class UserController {
 
     @GetMapping("/health_check")
     public String status() {
-       return "It's Working in User Service";
+       return String.format("It's Working in User Service on PORT %s", env.getProperty("local.server.port"));
     }
 
-    @GetMapping("/welcome_env")
-    public String welcome_env() {
-        return env.getProperty("greeting.message");
-    }
+//    @GetMapping("/welcome_env")
+//    public String welcome_env() {
+//        return env.getProperty("greeting.message");
+//    }
 
     @Autowired
     private Greeting greeting;
